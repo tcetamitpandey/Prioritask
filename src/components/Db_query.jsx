@@ -1,0 +1,88 @@
+import supabase from "../supabaseConnection"
+
+
+export async function get_data_from_Supabase(){
+
+    const { data, error, status }  = await supabase.from("test_project_1").select()
+    localStorage.setItem("taskList", JSON.stringify(data));
+
+    return data
+
+}
+
+
+
+export async function delete_from_Supabase(id){
+
+    const { data, error, status }  = await supabase.from("test_project_1").delete().eq("id",id)
+
+    return data.status
+    //if status is 204 is means successfully deleted 
+
+}
+
+export async function insert_data_to_supaabase({form_value, setForm_value,setrefetchData }){
+
+    if(form_value.important === ""){
+        form_value.important= false
+    }
+    if(form_value.urgent === ""){
+        form_value.urgent= false
+    }
+
+    if(form_value.title === ""){
+        window.alert("Please add the Task Title")
+    }else{
+        const {error} = await supabase.from("test_project_1").insert(
+            {   title:form_value.title,
+                description:form_value.description,
+                is_important:form_value.important,
+                is_urgent:form_value.urgent 
+            })
+
+        console.log(error)
+
+        setForm_value({
+            title:"",
+            description:"",
+            important : "",
+            urgent : ""
+        })
+
+        setrefetchData((prev)=>prev +1 )
+    }
+
+}
+
+export async function update_data_to_supaabase( id){
+    event.preventDefault()
+
+    if(form_value.title === ""){
+        window.alert("Title Should not be empty")
+    }else{
+
+        const {error} = await supabase.from("test_project_1").update(
+            {   title:form_value.title,
+                description:form_value.description,
+                is_important:form_value.important,
+                is_urgent:form_value.urgent }
+        ).eq("id", id)
+    }
+
+    setForm_value({
+         title:"",
+         description:"",
+         important:"",
+         urgent:""
+    })
+
+    setrefetchData((prev)=>prev+1)
+
+}
+
+export default {
+    get_data_from_Supabase,
+    delete_from_Supabase,
+    insert_data_to_supaabase,
+    update_data_to_supaabase
+  }

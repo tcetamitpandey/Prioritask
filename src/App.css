@@ -1,0 +1,327 @@
+:root{
+  --border_color : #ccc 
+}
+
+*{
+  font-weight: 500;
+  font-family: monospace;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.parent_container{
+  display: flex;
+
+  height: 90vh;
+  overflow-y: hidden;
+  border-bottom: 5px solid var(--border_color) ;
+}
+
+.left_container{
+  flex: 1;
+  background-color: rgb(53, 51, 77);
+  padding: 20px;
+  border-right: 3px solid var(--border_color) ;
+
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.task_list_to_edit{
+
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+
+}
+
+.right_container{
+  flex: 3;
+  padding: 20px;
+  background-color: rgba(26, 77, 72, 0.375);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.addBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  color: black;
+  font-size: large;
+  font-weight: 900;
+}
+
+
+
+.add_task_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border_color);
+  border-radius: 10px;
+  padding: 10px 5px;
+
+}
+
+
+.add_task_form input{
+  display: block;
+  padding: 10px 5px;
+  margin: 10px;
+
+  padding: 3px 10px;
+  background-color: rgb(180, 215, 204);
+  border-radius: 12px;
+}
+
+
+.add_task_form input[type="submit"]{
+
+  background-color: black;
+  color: ghostwhite;
+  font-size:medium;
+  font-weight: 700;
+  padding: 10px 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+
+.matrixContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 100%;
+  height: 400px;
+  color: black;
+}
+
+.matrix_div_container{
+  display: flex;
+  flex-direction: column;
+  max-height: 30vh;
+  position: relative;
+  min-height: 20vh;
+  
+}
+
+.imp_urgent{
+  background-color: #f87171 ;
+  padding: 25px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.not_imp_urgent{
+  background-color: #facc15 ;
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 25px;
+}
+.imp_not_urgent{
+  background-color: #60a5fa ;
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 25px;
+}
+.not_imp_not_urgent{
+  background-color: #a3e635 ;
+  padding: 10px;
+
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+  padding: 25px;
+}
+
+
+.form-parent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Dark background for the form container */
+.form-container {
+  z-index: 111;
+  background: #1f1f2b; 
+  padding: 2rem;
+  min-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: #eaeaea;
+}
+
+/* Inputs and Selects */
+.form-container input[type="text"],
+.form-container select {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  background-color: #2a2a3b;
+  color: #f1f1f1;
+  transition: border-color 0.2s, background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-container input[type="text"]:focus,
+.form-container select:focus {
+  border-color: #6366f1; /* indigo accent */
+  background-color: #2f2f41;
+  outline: none;
+}
+
+/* Labels */
+.form-container label {
+  font-size: 0.95rem;
+  color: #b0b0c3;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.form-container input[type="submit"] {
+  background-color: #6366f1; /* indigo-500 */
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container input[type="submit"]:hover {
+  background-color: #4f46e5; /* indigo-600 */
+}
+
+/* Optional smooth animations */
+.form-container input,
+.form-container select,
+.form-container input[type="submit"] {
+  transition: all 0.2s ease-in-out;
+}
+
+
+.Navbar_css{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5%;
+  padding-left: 5%;
+  width: 100vw;
+  height: 10vh;
+  background-color: #1f1f2b;
+  border-bottom: 3px solid var(--border_color);
+}
+
+
+.add_task_btn{
+  display: inline-block;
+  border: 3px solid white;
+  padding: 15px 20px;
+  border-radius: 2px;
+  display: flex;
+  font-weight: 900;
+  font-size: large;
+  cursor: pointer;
+}
+
+.item_array{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.matrix_title{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 35px;
+  font-weight: 900;
+  color: rgba(100, 34, 34, 0.2);
+  transform: translate(-50%,-50%);
+  z-index: 1;
+}
+
+.left_container_title{
+  font-size: large;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+}
+
+
+.Social_media_links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* space between icons if you add more */
+}
+
+.linkedin-icon {
+  font-size: 2rem; /* or any size you want */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.linkedin-icon:hover {
+  color: #83b2e1;
+  transform: scale(1.1);
+}
+
+
+@media (max-width:600px) {
+  
+  .matrixContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+
+  .matrix_title{
+    font-size: 100%;
+  }
+  .matrix_div_container{
+    min-height: 15vh;
+    max-height: 15vh;
+  }
+  
+ 
+}
