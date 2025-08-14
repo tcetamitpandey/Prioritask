@@ -1,12 +1,35 @@
-# React + Vite
+# 🧠 Prioritask – Productivity Matrix App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prioritask is a simple yet effective productivity app inspired by the **Eisenhower Matrix**. It helps you sort tasks into four quadrants based on their **importance** and **urgency**, so you can focus on what really matters and stop reacting to distractions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+- ✅ Organize tasks using the Important/Urgent matrix
+- ➕ Add and delete tasks dynamically
+- 📊 Visualize priorities in real-time
+- 🌙 Responsive design for mobile and desktop
+- 🛡️ Secure connection to Supabase for real-time data storage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Demo
+
+🔗 [Live Demo on Vercel](https://prioritask-six.vercel.app/)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** – UI and component structure
+- **Supabase** – (database & auth)
+- **CSS** - for Styling
+- **Vercel** – Deployment
+
+---
+## 📸 Screenshots
+<img width="1438" height="716" alt="Desktop Screenshot" src="https://github.com/user-attachments/assets/01000e59-e446-41dc-980c-ce7d90de0a19" />
+<img width="354" height="629" alt="Mobile Screenshot" src="https://github.com/user-attachments/assets/016396e7-af64-455e-afc5-aeb240787d63" />
+
+
