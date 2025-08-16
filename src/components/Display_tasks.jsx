@@ -1,11 +1,7 @@
 
-import { useEffect, useState, createContext } from "react"
-import supabase from "../supabaseConnection"
-
-import get_data_from_Supabase from "../components/Db_query"
-
 
 export function Fun_display_matrix({ task_data, setrefetchData }){
+
 
 
     return (

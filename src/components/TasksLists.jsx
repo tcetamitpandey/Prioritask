@@ -1,14 +1,8 @@
-
-import {useEffect, useState, useMemo} from "react"
 import supabase from "../supabaseConnection"
-import { FaEdit, FaTrash } from "react-icons/fa";
-
-
-
+import { FaTrash } from "react-icons/fa";
 
 
 export function Display_all_task_as_list( { task_data, setrefetchData }){
-
 
 
     return (
